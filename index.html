@@ -1,35 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamburgueria do Nicholas - A melhor de SP!</title>
-    <link rel="stylesheet" href="./styles/output.css">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles/output.css" />
+  </head>
+  <body>
     <!--Header-->
     <header class="bg-[url('/assets/bg.png')] w-full h-[420px] bg-zinc-900">
-        <div class="w-full h-full flex flex-col justify-center items-center">
-            <img src="assets/hamb-1.png" alt="Logo da Hamburgueria" class="w-32 rounded-full shadow-lg hover:scale-110 duration-200">
-            <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Hamburgueria do Nicholas</h1>
+      <div class="w-full h-full flex flex-col justify-center items-center">
+        <img
+          src="assets/hamb-1.png"
+          alt="Logo da Hamburgueria"
+          class="w-32 rounded-full shadow-lg hover:scale-110 duration-200"
+        />
+        <h1 class="text-4xl mt-4 mb-2 font-bold text-white">
+          Hamburgueria do Nicholas
+        </h1>
 
-            <address class="text-white font-medium">Rua abc, 123 - São Paulo/SP</address>
-            <div class="bg-green-500 px-4 py-1 rounded-lg mt-4" id="date-span">
-                <p class="text-white font-medium">Seg a Dom - 18h às 22h</p>
-            </div>
+        <address class="text-white font-medium">
+          Rua abc, 123 - São Paulo/SP
+        </address>
+        <div class="bg-green-500 px-4 py-1 rounded-lg mt-4" id="date-span">
+          <p class="text-white font-medium">Seg a Dom - 18h às 22h</p>
         </div>
+      </div>
     </header>
     <!--Fim do Header-->
-    
-    <main>
-        <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">Conheça nosso menu</h2>
-        <!--Inicio Menu-->
-        
-        <div>
-            
+
+    <!--Inicio Menu-->
+    <main id="menu">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
+        Conheça nosso menu
+      </h2>
+
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+      >
+        <!--Início Lanches-->
+        <div class="flex gap-2">
+          <img
+            src="assets/hamb-1.png"
+            alt="Hamburguer 1"
+            class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div>
+            <p class="font-bold">Hamburguer Smash</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
+              prato e maionese da casa.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 18.90</p>
+              <button
+                class="bg-gray-900 cursor-pointer px-5 py-0.5 rounded add-to-cart-btn"
+                data-name="Hamburguer Smash"
+                data-price="18.90"
+              >
+                <i class="fa-solid fa-cart-plus text-white text-lg"></i>
+              </button>
+            </div>
+          </div>
         </div>
-                <!--Fim Menu-->
+        <div class="flex gap-2">
+          <img
+            src="assets/hamb-2.png"
+            alt="Hamburguer 2"
+            class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Hamburguer Duplo</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
+              prato e maionese da casa.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 32.90</p>
+              <button
+                class="bg-gray-900 cursor-pointer px-5 py-0.5 rounded add-to-cart-btn"
+                data-name="Hamburguer Duplo"
+                data-price="32.90"
+              >
+                <i class="fa-solid fa-cart-plus text-white text-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <img
+            src="assets/hamb-3.png"
+            alt="Hamburguer 3"
+            class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Hamburguer Salad</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
+              prato e maionese da casa.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 35.90</p>
+              <button
+                class="bg-gray-900 cursor-pointer px-5 py-0.5 rounded add-to-cart-btn"
+                data-name="Hamburguer Salad"
+                data-price="35.90"
+              >
+                <i class="fa-solid fa-cart-plus text-white text-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <img
+            src="assets/hamb-4.png"
+            alt="Hamburguer Vegetariano"
+            class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Hamburguer Vegetariano</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
+              prato e maionese da casa.
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 28.90</p>
+              <button
+                class="bg-gray-900 cursor-pointer px-5 py-0.5 rounded add-to-cart-btn"
+                data-name="Hamburguer Vegetariano"
+                data-price="28.90"
+              >
+                <i class="fa-solid fa-cart-plus text-white text-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--Fim Lanches-->
+      </section>
+
+      <!--Início Bebidas-->
+      <section>
+        <div class="mx-auto max-w-7xl px-2 my-2">
+          <h2 class="font-bold text-3xl">Bebidas</h2>
+        </div>
+      </section>
+      <!--Fim Menu-->
     </main>
-</body>
+  </body>
 </html>
