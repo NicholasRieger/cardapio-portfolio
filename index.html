@@ -4,11 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamburgueria do Nicholas - A melhor de SP!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
     <link rel="stylesheet" href="./styles/output.css" />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .font-title {
+        font-family: "Oswald", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <!--Header-->
@@ -19,7 +37,7 @@
           alt="Logo da Hamburgueria"
           class="w-32 rounded-full shadow-lg hover:scale-110 duration-200"
         />
-        <h1 class="text-4xl mt-4 mb-2 font-bold text-white">
+        <h1 class="text-4xl mt-4 mb-2 font-title text-white">
           Hamburgueria do Nicholas
         </h1>
 
@@ -35,7 +53,7 @@
 
     <!--Inicio Menu-->
     <main id="menu">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
+      <h2 class="text-2xl md:text-3xl font-title text-center mt-9 mb-6">
         Conheça nosso menu
       </h2>
 
@@ -50,7 +68,7 @@
             class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
           />
           <div>
-            <p class="font-bold">Hamburguer Smash</p>
+            <p class="font-title text-xl">Hamburguer Smash</p>
             <p class="text-sm">
               Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
               prato e maionese da casa.
@@ -67,6 +85,7 @@
             </div>
           </div>
         </div>
+
         <div class="flex gap-2">
           <img
             src="assets/hamb-2.png"
@@ -75,7 +94,7 @@
           />
 
           <div>
-            <p class="font-bold">Hamburguer Duplo</p>
+            <p class="font-title text-xl">Hamburguer Duplo</p>
             <p class="text-sm">
               Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
               prato e maionese da casa.
@@ -92,6 +111,7 @@
             </div>
           </div>
         </div>
+
         <div class="flex gap-2">
           <img
             src="assets/hamb-3.png"
@@ -100,7 +120,7 @@
           />
 
           <div>
-            <p class="font-bold">Hamburguer Salad</p>
+            <p class="font-title text-xl">Hamburguer Salad</p>
             <p class="text-sm">
               Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
               prato e maionese da casa.
@@ -117,6 +137,7 @@
             </div>
           </div>
         </div>
+
         <div class="flex gap-2">
           <img
             src="assets/hamb-4.png"
@@ -125,7 +146,7 @@
           />
 
           <div>
-            <p class="font-bold">Hamburguer Vegetariano</p>
+            <p class="font-title text-xl">Hamburguer Vegetariano</p>
             <p class="text-sm">
               Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
               prato e maionese da casa.
@@ -146,13 +167,10 @@
       </section>
 
       <!--Início Bebidas-->
-      <h2 class="font-bold text-3xl text-center">Bebidas</h2>
-      <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
-        Conheça nosso menu
-      </h2>
+      <h2 class="font-title text-3xl text-center">Bebidas</h2>
 
       <section
-        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16 mt-6"
       >
         <!--Início Bebidas-->
         <div class="flex gap-2">
@@ -162,7 +180,7 @@
             class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
           />
           <div class="flex-1">
-            <p class="font-bold">Coca-Cola</p>
+            <p class="font-title text-xl">Coca-Cola</p>
             <div class="flex items-center justify-between mt-3">
               <p class="font-bold text-lg">R$ 6.90</p>
               <button
@@ -175,6 +193,7 @@
             </div>
           </div>
         </div>
+
         <div class="flex gap-2">
           <img
             src="assets/refri-2.png"
@@ -182,7 +201,7 @@
             class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
           />
           <div class="flex-1">
-            <p class="font-bold">Guaraná Antarctica</p>
+            <p class="font-title text-xl">Guaraná Antarctica</p>
             <div class="flex items-center justify-between mt-3">
               <p class="font-bold text-lg">R$ 6.90</p>
               <button
@@ -200,10 +219,38 @@
     </main>
 
     <!--Modal Cart-->
-    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center">
+    <div
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+    >
       <div class="bg-white p-5 rounded-md min-w-[80%] md:min-w-[600px]">
-        <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
+        <h2 class="text-center font-title text-2xl mb-2">Meu carrinho</h2>
 
+        <div id="cart-items" class="flex justify-between mb-2 flex-col">
+          <p class="font-bold">Total: <span id="cart-total">R$ 0.00</span></p>
+        </div>
+
+        <label for="address" class="font-bold mt-4 block">
+          Endereço de entrega:
+        </label>
+        <input
+          type="text"
+          placeholder="Digite seu endereço completo..."
+          id="address"
+          class="w-full border-2 p-1 rounded my-1"
+        />
+        <p class="text-red-500 hidden" id="address-warn">
+          Digite seu endereço completo!
+        </p>
+
+        <div class="flex items-center justify-between mt-5 w-full">
+          <button id="close-modal-btn">Fechar</button>
+          <button
+            id="checkout-btn"
+            class="bg-green-500 text-white px-4 py-1 rounded"
+          >
+            Finalizar Pedido
+          </button>
+        </div>
       </div>
     </div>
     <!--Fim Modal Cart-->
@@ -211,8 +258,11 @@
     <footer
       class="w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items-center justify-center"
     >
-      <button class="flex items-center gap-2 text-white font-bold cursor-pointer" id="cart-btn">
-        (<span id="cart-count">2</span>) Ver Carrinho
+      <button
+        class="flex items-center gap-2 text-white font-bold cursor-pointer"
+        id="cart-btn"
+      >
+        (<span id="cart-count">0</span>) Ver Carrinho
         <i class="fa-solid fa-cart-shopping text-white text-lg"></i>
       </button>
     </footer>
