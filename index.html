@@ -220,7 +220,7 @@
 
     <!--Modal Cart-->
     <div
-      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden " id="cart-modal"
     >
       <div class="bg-white p-5 rounded-md min-w-[80%] md:min-w-[600px]">
         <h2 class="text-center font-title text-2xl mb-2">Meu carrinho</h2>
@@ -243,10 +243,10 @@
         </p>
 
         <div class="flex items-center justify-between mt-5 w-full">
-          <button id="close-modal-btn">Fechar</button>
+          <button id="close-modal-btn" class="cursor-pointer hover:bg-gray-300 p-1 rounded">Fechar</button>
           <button
             id="checkout-btn"
-            class="bg-green-500 text-white px-4 py-1 rounded"
+            class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 active:bg-green-400 cursor-pointer"
           >
             Finalizar Pedido
           </button>
@@ -266,5 +266,7 @@
         <i class="fa-solid fa-cart-shopping text-white text-lg"></i>
       </button>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
