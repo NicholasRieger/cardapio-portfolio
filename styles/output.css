@@ -278,9 +278,6 @@
   .max-w-\[600px\] {
     max-width: 600px;
   }
-  .min-w-\[80\%\] {
-    min-width: 80%;
-  }
   .flex-1 {
     flex: 1;
   }
@@ -480,11 +477,6 @@
       background-color: var(--color-green-400);
     }
   }
-  .md\:min-w-\[600px\] {
-    @media (width >= 48rem) {
-      min-width: 600px;
-    }
-  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -501,6 +493,18 @@
       line-height: var(--tw-leading, var(--text-3xl--line-height));
     }
   }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  width: 100%;
 }
 body {
   background-color: #eff0dd;
