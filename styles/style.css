@@ -1,23 +1,10 @@
 @import "tailwindcss";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body{
-    min-height: 100vh;
-    /* fallback universal */
-    min-height: 100svh;
-    /* Safari/iOS: viewport “pequena” estável */
-    min-height: 100dvh;
-    /* modernos: viewport dinâmica (ajusta com barra) */
-    overflow-x: hidden;
-    width: 100%;
-}
-
 body {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  overflow-x: hidden;
   background-color: #eff0dd;
   font-family: "Poppins", sans-serif;
 }

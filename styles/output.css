@@ -494,19 +494,11 @@
     }
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
+body {
   min-height: 100vh;
   min-height: 100svh;
   min-height: 100dvh;
   overflow-x: hidden;
-  width: 100%;
-}
-body {
   background-color: #eff0dd;
   font-family: "Poppins", sans-serif;
 }
