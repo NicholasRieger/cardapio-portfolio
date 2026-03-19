@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamburgueria do Nicholas - A melhor de SP!</title>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -58,7 +59,7 @@
       </h2>
 
       <section
-        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16 "
       >
         <!--Início Lanches-->
         <div class="flex gap-2">
@@ -86,28 +87,29 @@
           </div>
         </div>
 
-        <div class="flex gap-2">
-          <img
-            src="assets/hamb-2.png"
-            alt="Hamburguer 2"
-            class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
-          />
-
-          <div>
-            <p class="font-title text-xl">Hamburguer Duplo</p>
-            <p class="text-sm">
-              Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
-              prato e maionese da casa.
-            </p>
-            <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg">R$ 32.90</p>
-              <button
-                class="bg-gray-900 cursor-pointer px-5 py-0.5 rounded add-to-cart-btn"
-                data-name="Hamburguer Duplo"
-                data-price="32.90"
-              >
-                <i class="fa-solid fa-cart-plus text-white text-lg"></i>
-              </button>
+        <div>
+          <div class="flex gap-2">
+            <img
+              src="assets/hamb-2.png"
+              alt="Hamburguer 2"
+              class="w-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-title text-xl">Hamburguer Duplo</p>
+              <p class="text-sm">
+                Pão levinho de fermentação natural da Trigou, burguer 160g, queijo
+                prato e maionese da casa.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 32.90</p>
+                <button
+                  class="bg-gray-900 cursor-pointer px-5 py-0.5 rounded add-to-cart-btn"
+                  data-name="Hamburguer Duplo"
+                  data-price="32.90"
+                >
+                  <i class="fa-solid fa-cart-plus text-white text-lg"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -220,14 +222,14 @@
 
     <!--Modal Cart-->
     <div
-      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden " id="cart-modal"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+      id="cart-modal"
     >
       <div class="bg-white p-5 rounded-md min-w-[80%] md:min-w-[600px]">
         <h2 class="text-center font-title text-2xl mb-2">Meu carrinho</h2>
 
-        <div id="cart-items" class="flex justify-between mb-2 flex-col">
-          <p class="font-bold">Total: <span id="cart-total">R$ 0.00</span></p>
-        </div>
+        <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+        <p class="font-bold">Total: <span id="cart-total">R$ 0.00</span></p>
 
         <label for="address" class="font-bold mt-4 block">
           Endereço de entrega:
@@ -241,9 +243,21 @@
         <p class="text-red-500 hidden" id="address-warn">
           Digite seu endereço completo!
         </p>
+        <p class="text-red-500 hidden" id="horario-warn">
+          O restaurante está fechado no momento. Por favor, volte durante o
+          horário de funcionamento.
+        </p>
+        <p class="text-red-500 hidden" id="finalizar-warn">
+          Seu carrinho está vazio!
+        </p>
 
         <div class="flex items-center justify-between mt-5 w-full">
-          <button id="close-modal-btn" class="cursor-pointer hover:bg-gray-300 p-1 rounded">Fechar</button>
+          <button
+            id="close-modal-btn"
+            class="cursor-pointer hover:bg-gray-300 p-1 rounded"
+          >
+            Fechar
+          </button>
           <button
             id="checkout-btn"
             class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 active:bg-green-400 cursor-pointer"
@@ -267,6 +281,7 @@
       </button>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="script.js"></script>
   </body>
 </html>
