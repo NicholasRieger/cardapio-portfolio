@@ -367,6 +367,9 @@
   .bg-zinc-900 {
     background-color: var(--color-zinc-900);
   }
+  .bg-\[url\(\'\.\.\/assets\/bg\.png\'\)\] {
+    background-image: url('../assets/bg.png');
+  }
   .bg-\[url\(\'\.\/assets\/bg\.png\'\)\] {
     background-image: url('./assets/bg.png');
   }
