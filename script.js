@@ -8,7 +8,6 @@ const closeModalBtn = document.getElementById("close-modal-btn");
 const cartCounter = document.getElementById("cart-count");
 const addressInput = document.getElementById("address");
 const addressWarn = document.getElementById("address-warn");
-const horarioWarn = document.getElementById("horario-warn");
 const finalizarWarn = document.getElementById("finalizar-warn");
 
 const cart = [];
@@ -16,7 +15,6 @@ const cart = [];
 cartBtn.addEventListener("click", () => {
   updateCartModal();
 
-  horarioWarn.classList.add("hidden");
   finalizarWarn.classList.add("hidden");
   addressWarn.classList.add("hidden");
   addressInput.classList.remove("border-red-500");
@@ -35,6 +33,13 @@ cartModal.addEventListener("click", (e) => {
 closeModalBtn.addEventListener("click", () => {
   cartModal.classList.add("hidden");
   cartModal.classList.remove("flex");
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    cartModal.classList.add("hidden");
+    cartModal.classList.remove("flex");
+  }
 });
 
 menu.addEventListener("click", (e) => {
@@ -87,6 +92,7 @@ function animateCartButton() {
 
 function addToCart(name, price) {
   const existingItem = cart.find((item) => item.name === name);
+
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
@@ -96,6 +102,20 @@ function addToCart(name, price) {
       quantity: 1,
     });
   }
+
+  finalizarWarn.classList.add("hidden");
+
+  Toastify({
+    text: "Item adicionado ao carrinho!",
+    duration: 2000,
+    close: true,
+    gravity: "top",
+    position: "center",
+    stopOnFocus: true,
+    style: {
+      background: "#16a34a",
+    },
+  }).showToast();
 
   animateCartButton();
   updateCartModal();
@@ -143,21 +163,25 @@ function updateCartModal() {
 }
 
 cartItemsContainer.addEventListener("click", (e) => {
-  if (e.target.classList.contains("remove-btn")) {
-    const name = e.target.getAttribute("data-name");
+  const removeButton = e.target.closest(".remove-btn");
 
+  if (removeButton) {
+    const name = removeButton.getAttribute("data-name");
     removeItemFromCart(name);
   }
 });
 
 function removeItemFromCart(name) {
   const itemIndex = cart.findIndex((item) => item.name === name);
+
   if (itemIndex !== -1) {
     const item = cart[itemIndex];
     item.quantity -= 1;
+
     if (item.quantity === 0) {
       cart.splice(itemIndex, 1);
     }
+
     updateCartModal();
     return;
   }
@@ -175,7 +199,6 @@ addressInput.addEventListener("input", () => {
 checkoutBtn.addEventListener("click", () => {
   const isOpen = checkRestaurantOpen();
 
-  horarioWarn.classList.add("hidden");
   finalizarWarn.classList.add("hidden");
   addressWarn.classList.add("hidden");
   addressInput.classList.remove("border-red-500");
@@ -192,6 +215,8 @@ checkoutBtn.addEventListener("click", () => {
         background: "#dc2626",
       },
     }).showToast();
+
+    return;
   }
 
   if (cart.length === 0) {
@@ -233,12 +258,28 @@ R$ ${total.toFixed(2)}
     "_blank",
   );
 
-  cart = [];
+  Toastify({
+    text: "Pedido enviado para o WhatsApp!",
+    duration: 2500,
+    close: true,
+    gravity: "top",
+    position: "center",
+    stopOnFocus: true,
+    style: {
+      background: "#16a34a",
+    },
+  }).showToast();
+
+  cart.length = 0;
+  updateCartModal();
+  addressInput.value = "";
+  cartModal.classList.add("hidden");
+  cartModal.classList.remove("flex");
 });
 
 function checkRestaurantOpen() {
-  const data = new Date();
-  const hora = data.getHours();
+  const date = new Date();
+  const hora = date.getHours();
 
   return hora >= 18 && hora < 22;
 }
