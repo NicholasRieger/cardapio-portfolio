@@ -56,7 +56,4 @@ Algumas melhorias adicionadas em relação à base estudada:
 
 ## 📷 Preview
 
-
-
-```md
 ![Preview do projeto](./assets/projeto-hamburgueria-preview.png)
